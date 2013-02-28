@@ -5,7 +5,7 @@ test:
 		--spec
 
 docs:
-	@./bin/simple \
+	@./bin/docs \
 		--out docs \
 		lib/**/*.js
 

@@ -7,6 +7,8 @@
 		"name": "Stephen Mathieson",
 		"email": "me@stephenmathieson.com"
 	},
+	"main": "./lib",
+	"bin": "./bin/docs"
 	"dependencies": {
 		"xregexp": "~2.0.0",
 		"underscore": "~1.4.4",
