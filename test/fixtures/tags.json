@@ -1,0 +1,101 @@
+{
+	"examples": [
+		[
+			"@example\n```\nvar foo = new Bar();\nfoo.baz();\nreturn foo.bit();\n```",
+			"var foo = new Bar();\nfoo.baz();\nreturn foo.bit();"
+		],
+		[
+			"@example\n```\nreturn new Bar().baz.bit();\n```",
+			"return new Bar().baz.bit();"
+		]
+	],
+	"params": [
+		[
+			"@param {String} foo\n",
+			[
+				"String",
+				"foo"
+			]
+		],
+		[
+			"@param {String} foo Some foo\n",
+			[
+				"String",
+				"foo",
+				"Some foo"
+			]
+		]
+	],
+	"author": [
+		[
+			"@author Someone\n",
+			[
+				"Someone"
+			]
+		],
+		[
+			"@author Some One\n",
+			[
+				"Some One"
+			]
+		],
+		[
+			"@author Some One <some.one@gmail.com>\n",
+			[
+				"Some One <some.one@gmail.com>"
+			]
+		],
+		[
+			"@author <Some One> some.one@gmail.com\n",
+			[
+				"<Some One> some.one@gmail.com"
+			]
+		]
+	],
+	"returns": [
+		[
+			"@return {String}\n",
+			[
+				"String"
+			]
+		],
+		[
+			"@return {String|Array}\n",
+			[
+				"String|Array"
+			]
+		],
+		[
+			"@return {String} The String\n",
+			[
+				"String",
+				"The String"
+			]
+		],
+		[
+			"@return {String|Array} The String or Array\n",
+			[
+				"String|Array",
+				"The String or Array"
+			]
+		]
+	],
+	"boolean": [
+		[
+			"@chainable\n",
+			"chainable"
+		],
+		[
+			"@public\n",
+			"public"
+		],
+		[
+			"@private\n",
+			"private"
+		],
+		[
+			"@async\n",
+			"async"
+		]
+	]
+}

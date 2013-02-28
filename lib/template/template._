@@ -1,0 +1,76 @@
+
+
+<%
+	print('### ')
+	if (type === "method" && typeof object === "string") {
+		print(object + '.' + name);
+	} else if (type === "method" && typeof constructor === "string") {
+		print(constructor + '#' + name);
+	} else {
+		print(name);
+	}
+
+	print('(');
+	if (typeof params === "object" && params.length) {
+		params.forEach(function (param, index) {
+			if (index > 0) {
+				print(', ');
+			}
+			print(param[1]);
+		});
+	}
+	print(')');
+%>
+
+
+<%
+	if (typeof params === "object" && params.length) {
+		print('#### Parameters\n\n');
+		params.forEach(function (param) {
+			print('* ');
+			print('`' + param[1] + '`');
+			print('_' + param[0] +'_');
+			if (param[2]) {
+				print(param[2]);
+			}
+			print('\n');
+		});
+	}
+%>
+
+
+<%= desc %>
+
+
+<%
+	if (typeof extra === "string") {
+		print(extra);
+	}
+%>
+
+
+<%
+	if (typeof examples === 'object' && examples.length) {
+		print('#### Example Usage\n\n');
+		examples.forEach(function (example) {
+			print('\n```javascript\n');
+			print(example);
+			print('\n```\n\n');
+		});
+	}
+%>
+
+
+<%
+
+	if (typeof returns === "object" && returns.length) {
+		print('#### Returns\n\n');
+		returns.forEach(function (ret) {
+			print('_' + ret[0] + '_');
+			if (ret[1]) {
+				print(ret[1]);
+			}
+		});
+	}
+%>
+

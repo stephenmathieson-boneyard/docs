@@ -1,0 +1,45 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var files,
+	fs = require('fs-extra'),
+	path = require('path'),
+	simple = require('../lib'),
+	args = require('optimist').argv,
+	out = args.out || args.o || 'docs';
+
+files = args._;
+
+if (!files.length) {
+	throw new SyntaxError('you must provide files');
+}
+
+files.forEach(function (file) {
+
+	var dir = path.join(out, path.dirname(file)),
+		name = path.basename(file, 'js'),
+		md = path.join(dir, name + 'md');
+
+	fs.readFile(file, 'utf-8', function (err, data) {
+		if (err) {
+			throw err;
+		}
+
+		simple(data, function (err, output) {
+			if (err) {
+				throw err;
+			}
+
+			fs.outputFile(md, output, function (err) {
+				if (err) {
+					throw err;
+				}
+
+				console.log('wrote:', '\x1B[36m', md, '\x1B[39m');
+
+			});
+		});
+	});
+
+});

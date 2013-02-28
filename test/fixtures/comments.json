@@ -1,0 +1,76 @@
+{
+	"valid": [
+		{
+			"input": "/**\n * Lorem ipsum magna est ea ea non consectetur commodo amet voluptate cillum Ut est ex enim magna aliquip mollit consectetur exercitation nostrud aliquip. \n * \n * @param {String} foo The foo\n * @param {Array} bar The bar\n * @return {Object} The foo bar\n */",
+			"expected": {
+				"desc": "Lorem ipsum magna est ea ea non consectetur commodo amet voluptate cillum Ut est ex enim magna aliquip mollit consectetur exercitation nostrud aliquip.",
+				"params": [
+					[
+						"String",
+						"foo",
+						"The foo"
+					],
+					[
+						"Array",
+						"bar",
+						"The bar"
+					]
+				],
+				"returns": [
+					[
+						"Object",
+						"The foo bar"
+					]
+				]
+			}
+		},
+		{
+			"input": "/**\n * Lorem ipsum ex elit aliqua Ut minim labore deserunt.\n *\n * @async\n * @example\n * ```\n * foo('hello', function (world) {\n *   console.log(world);\n * });\n * ```\n * @param {String} foo\n * @param {Function} callback\n */",
+			"expected": {
+				"desc": "Lorem ipsum ex elit aliqua Ut minim labore deserunt.",
+				"async": true,
+				"examples": [
+					[
+						"foo('hello', function (world) {\nconsole.log(world);\n});"
+					]
+				],
+				"params": [
+					[
+						"String",
+						"foo",
+						""
+					],
+					[
+						"Function",
+						"callback",
+						""
+					]
+				]
+			}
+		},
+		{
+			"input": "/**\n * Lorem ipsum ex elit aliqua Ut minim labore deserunt.\n *\n * @chainable\n * @example\n * ```\n * foo.bar().bar().bar();\n * ```\n * @example\n * ```\n * new Foo.bar().baz().bang();\n * ```\n * @return {Foo}\n */",
+			"expected": {
+				"examples": [
+					[
+						"foo.bar().bar().bar();"
+					],
+					[
+						"new Foo.bar().baz().bang();"
+					]
+				],
+				"returns": [
+					[
+						"Foo",
+						""
+					]
+				],
+				"desc": "Lorem ipsum ex elit aliqua Ut minim labore deserunt.",
+				"chainable": true
+			}
+		}
+	],
+	"invalid": [
+		"/**\n *\n *\n *\n *\n *\n */"
+	]
+}

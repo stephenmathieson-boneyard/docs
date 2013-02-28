@@ -1,0 +1,222 @@
+{
+	"declaration": [
+		{
+			"line": "function foo() {",
+			"expected": {
+				"type": "function",
+				"name": "foo"
+			}
+		},
+		{
+			"line": "function      foo      ()       {",
+			"expected": {
+				"type": "function",
+				"name": "foo"
+			}
+		},
+		{
+			"line": "function\t foo      (\t\t\t\t\t\t)       {",
+			"expected": {
+				"type": "function",
+				"name": "foo"
+			}
+		},
+		{
+			"line": "function\t foo      (bar)       {",
+			"expected": {
+				"type": "function",
+				"name": "foo"
+			}
+		},
+		{
+			"line": "function foo(bar, baz, bax, cae, ter, uin) {",
+			"expected": {
+				"type": "function",
+				"name": "foo"
+			}
+		},
+		{
+			"line": "function foo(bar, baz,\t bax, cae, \t\tter, uin) {",
+			"expected": {
+				"type": "function",
+				"name": "foo"
+			}
+		}
+	],
+	"expressions": [
+		{
+			"line": "var foo = function ()",
+			"expected": {
+				"type": "function",
+				"name": "foo"
+			}
+		},
+		{
+			"line": "var    foo =  function (  )",
+			"expected": {
+				"type": "function",
+				"name": "foo"
+			}
+		},
+		{
+			"line": "var\tfoo =  function (\t)",
+			"expected": {
+				"type": "function",
+				"name": "foo"
+			}
+		},
+		{
+			"line": "var foo = function (bar)",
+			"expected": {
+				"type": "function",
+				"name": "foo"
+			}
+		},
+		{
+			"line": "var foo = function (\tbar)",
+			"expected": {
+				"type": "function",
+				"name": "foo"
+			}
+		},
+		{
+			"line": "var foo = function (bar, baz)",
+			"expected": {
+				"type": "function",
+				"name": "foo"
+			}
+		},
+		{
+			"line": "var foo = function (bar,\tbaz)",
+			"expected": {
+				"type": "function",
+				"name": "foo"
+			}
+		},
+		{
+			"line": "var foo = (function () {",
+			"expected": {
+				"type": "function",
+				"name": "foo"
+			}
+		}
+	],
+	"methods": {
+		"prototype": [
+			{
+				"line": "Foo.prototype.bar = function () {}",
+				"expected": {
+					"type": "method",
+					"constructor": "Foo",
+					"name": "bar"
+				}
+			},
+			{
+				"line": "Foo.prototype.bar=function(){}",
+				"expected": {
+					"type": "method",
+					"constructor": "Foo",
+					"name": "bar"
+				}
+			},
+			{
+				"line": "Foo.prototype.bar\t= function  () { }",
+				"expected": {
+					"type": "method",
+					"constructor": "Foo",
+					"name": "bar"
+				}
+			},
+			{
+				"line": "Foo.prototype.bar=function(baz, bang, blitz) {}",
+				"expected": {
+					"type": "method",
+					"constructor": "Foo",
+					"name": "bar"
+				}
+			},
+			{
+				"line": "Foo.prototype.bar=(function() {}",
+				"expected": {
+					"type": "method",
+					"constructor": "Foo",
+					"name": "bar"
+				}
+			},
+			{
+				"line": "Foo.prototype.bar\t=   (function() {}",
+				"expected": {
+					"type": "method",
+					"constructor": "Foo",
+					"name": "bar"
+				}
+			}
+		],
+		"object": [
+			{
+				"line": "foo.bar = function () {}",
+				"expected": {
+					"type": "method",
+					"object": "foo",
+					"name": "bar"
+				}
+			},
+			{
+				"line": "foo.bar = function (biz, bang, blatz) {}",
+				"expected": {
+					"type": "method",
+					"object": "foo",
+					"name": "bar"
+				}
+			},
+			{
+				"line": "foo.bar = function biz() {}",
+				"expected": {
+					"type": "method",
+					"object": "foo",
+					"name": "bar"
+				}
+			},
+			{
+				"line": "foo.bar = function biz(bang, blatz) {}",
+				"expected": {
+					"type": "method",
+					"object": "foo",
+					"name": "bar"
+				}
+			},
+			{
+				"line": "foo.bar = (function () {}",
+				"expected": {
+					"type": "method",
+					"object": "foo",
+					"name": "bar"
+				}
+			},
+			{
+				"line": "foo.bar.baz.bang = function () {}",
+				"expected": {
+					"type": "method",
+					"object": "foo.bar.baz",
+					"name": "bang"
+				}
+			},
+			{
+				"line": "foo.bar.baz.bang = function blatz() {}",
+				"expected": {
+					"type": "method",
+					"object": "foo.bar.baz",
+					"name": "bang"
+				}
+			},
+			{
+				"line": "foo.bar.baz.bang = (function () {}",
+				"expected": {
+					"type": "method",
+					"object": "foo.bar.baz",
+					"name": "bang"
+				}
+			}
+		]
+	}
+}
