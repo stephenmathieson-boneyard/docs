@@ -12,6 +12,7 @@ docs:
 lint:
 	./node_modules/.bin/jshint \
 		./lib/**/*.js \
-		./test/**/*.js
+		./test/*.js \
+		./test/parse/*.js
 
 .PHONY: test docs lint

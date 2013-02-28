@@ -7,6 +7,7 @@ var vows = require('vows'),
 	parse = require('../../lib/parse');
 
 function tests(file, properties) {
+	/*jshint unused:false*/
 
 	function genericPropertyCheck(property, type) {
 		return {
@@ -16,7 +17,9 @@ function tests(file, properties) {
 				// {
 				//   type: 'function',
 				//   name: 'addBar',
-				//   comment: '/**\n* Add bar to some foo\n*\n* @param {Number} bar The number of bar to add\n* @return {String} The bar\'ed foo\n*/',
+				//   comment: '/**\n* Add bar to some foo\n*\n* @param {Number}
+				//             bar The number of bar to add\n* @return {String}
+				//             The bar\'ed foo\n*/',
 				//   desc: 'Add bar to some foo',
 				//   extra: '',
 				//   params: [ [ 'Number', 'bar', 'The number of bar to add' ] ],
