@@ -68,7 +68,7 @@
 		returns.forEach(function (ret) {
 			print('_' + ret[0] + '_');
 			if (ret[1]) {
-				print(ret[1]);
+				print(' ' + ret[1]);
 			}
 		});
 	}
