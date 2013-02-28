@@ -28,8 +28,8 @@
 		print('#### Parameters\n\n');
 		params.forEach(function (param) {
 			print('* ');
-			print('`' + param[1] + '`');
-			print('_' + param[0] +'_');
+			print('`' + param[1] + '` ');
+			print('_' + param[0] +'_ ');
 			if (param[2]) {
 				print(param[2]);
 			}
