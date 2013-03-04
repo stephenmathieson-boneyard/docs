@@ -15,11 +15,14 @@ if (!files.length) {
 	throw new SyntaxError('you must provide files');
 }
 
+
 files.forEach(function (file) {
 
 	var dir = path.join(out, path.dirname(file)),
-		name = path.basename(file, 'js'),
-		md = path.join(dir, name + 'md');
+		name = path.basename(file),
+		ext = path.extname(name),
+		md = path.join(dir,
+				name.substring(0, (name.length - ext.length)) + '.md');
 
 	fs.readFile(file, 'utf-8', function (err, data) {
 		if (err) {
